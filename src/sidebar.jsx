@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SidebarContainer = styled.div`
     background-color: red;
@@ -24,25 +25,24 @@ const StyledButton = styled.button`
 
 
 
-export default function Sidebar({onCategorySelect}) {
+export default function Sidebar() {
     const [SidebarWidth, setSidebarWidth] = useState('3vw');
+    const navigate = useNavigate();
 
     function toggleSidebar(){
         setSidebarWidth(SidebarWidth === '3vw' ? '10vw' : '3vw');
     }
 
-    function handleCategory(e){
-        onCategorySelect(e.target.id);
-    }
-
-
     return (
         <SidebarContainer width={SidebarWidth}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1vh'}}>
-                <StyledButton onClick={toggleSidebar} />
-                    {[1,2,3,4,5,6].map(num => (
-                        <StyledButton key={num} onClick={handleCategory} id={num.toString()} />
-                    ))}
+                <StyledButton onClick={toggleSidebar}/>
+                <StyledButton onClick={() => navigate('/Content1')}/>
+                <StyledButton onClick={() => navigate('/Content2')}/>
+                <StyledButton onClick={() => navigate('/Content3')}/>
+                <StyledButton onClick={() => navigate('/Content4')}/>
+                <StyledButton onClick={() => navigate('/Content5')}/>
+                <StyledButton onClick={() => navigate('/Content6')}/>
             </div>
             <StyledButton />
         </SidebarContainer>

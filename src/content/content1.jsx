@@ -6,10 +6,11 @@ const ContentContainer = styled.div`
 `
 
 
-export default function Content({selectedId}){
+export default function Content1(){
+
     return(
         <ContentContainer>
-            {selectedId}    
+            Rendered content1
         </ContentContainer>
     )
 }
