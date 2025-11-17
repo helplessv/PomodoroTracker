@@ -6,13 +6,11 @@ const ContentContainer = styled.div`
 `
 
 
-export default function Content2({kakashke}){
+export default function Content2(){
 
     return(
         <ContentContainer>
             Rendered content2
-            <br></br>   
-            {kakashke}
         </ContentContainer>
     )
 }

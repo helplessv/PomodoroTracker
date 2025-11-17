@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Sidebar from './sidebar'
 import Infobar from './infobar'
 import Content1 from './content/content1'
@@ -17,17 +17,25 @@ const Main = styled.div`
 `
 
 function App() {
-  const [kakashke, setKakashke] = useState(0);
+  const [currentName, setCurrentName] = useState(() => {
+    return localStorage.getItem("currentName") || ""; // восстанавливаем
+  });
+
+  useEffect(() => {
+    if (currentName) {
+      localStorage.setItem("currentName", currentName);
+    }
+  }, [currentName]);
 
   return (
     <div style={{ display: 'flex' }}>
-      <Sidebar/>
+      <Sidebar currentName={currentName} setCurrentName={setCurrentName}/>
       <Main>
-        <Infobar />
+        <Infobar currentName={currentName}/>
         <Routes>
           <Route path="/Content1" element={<Content1 />} />
-          <Route path="/Content2" element={<Content2 kakashke={kakashke}/>} />
-          <Route path="/Content3" element={<Content3 perdesh={kakashke} onChange={setKakashke}/>} />
+          <Route path="/Content2" element={<Content2 />} />
+          <Route path="/Content3" element={<Content3 />} />
           <Route path="/Content4" element={<Content4 />} />
           <Route path="/Content5" element={<Content5 />} />
           <Route path="/Content6" element={<Content6 />} />

@@ -7,19 +7,11 @@ const ContentContainer = styled.div`
 `
 
 
-export default function Content3({ kakashke, onChange }) {
-    const [govno, setGovno] = useState(0);
-  
-    function handleCount() {
-      const newValue = govno + 1;
-      setGovno(newValue);
-      if (onChange) onChange(newValue);
-    }
+export default function Content3() {
   
     return (
       <ContentContainer>
         Rendered content3
-        <button onClick={handleCount}>{govno}</button>
       </ContentContainer>
     );
   }

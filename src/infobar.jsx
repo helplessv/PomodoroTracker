@@ -7,10 +7,10 @@ const InfobarContainer = styled.div`
 `
 
 
-export default function Infobar(){
+export default function Infobar({currentName}){
     return(
         <InfobarContainer>
-            авававававава
+            {currentName}
         </InfobarContainer>
     )
 }
