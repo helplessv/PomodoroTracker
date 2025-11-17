@@ -17,9 +17,9 @@ const Main = styled.div`
 `
 
 function App() {
-  const [currentName, setCurrentName] = useState(() => {
-    return localStorage.getItem("currentName") || ""; // восстанавливаем
-  });
+  const [currentName, setCurrentName] = useState(
+    localStorage.getItem("currentName") || ""
+  );
 
   useEffect(() => {
     if (currentName) {
