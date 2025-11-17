@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "set PATH=%PATH%;C:\\Program Files\\Git\\cmd && gh-pages -d dist"
+    "deploy": "node scripts/deploy.js"
     
   },
   "dependencies": {
