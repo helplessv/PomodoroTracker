@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://<ваш-username>.github.io/<имя-репозитория>/",
+  "homepage": "https://helplessv.github.io/pomodoroTracker/",
   "scripts": {
     "start": "react-scripts start",
     "dev": "vite",
@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "set PATH=%PATH%;C:\\Program Files\\Git\\cmd && gh-pages -d dist"
     
   },
   "dependencies": {
